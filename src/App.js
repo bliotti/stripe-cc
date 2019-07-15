@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import logo from './logo.svg'
+// import './App.css'
+import CheckoutForm from './CheckoutForm'
+import { Elements, StripeProvider } from 'react-stripe-elements'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <StripeProvider apiKey="pk_test_TYooMQauvdEDq54NiTphI7jx">
+      <div className="example">
+        <h1>React Stripe Example</h1>
+        <Elements>
+          <CheckoutForm />
+        </Elements>
+      </div>
+    </StripeProvider>
+  )
 }
 
-export default App;
+export default App
